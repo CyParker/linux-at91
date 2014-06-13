@@ -229,6 +229,19 @@ static struct i2c_board_info i2c_ov7740 = {
 	I2C_BOARD_INFO("ov7740", 0x21),
 };
 
+static struct spi_board_info spidev_board_info[]{
+	{
+		.modalias = "spidev",
+		.max_speed_hz = 500000,
+		.bus_num = 1,
+		.chips_select = 0,
+		.mode = SPI_MODE_3
+	},
+	
+};
+
+at91_add_device_spi(spidev_board_info, ARRAY_SIZE(spidev_board_info));
+
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov2640, 0);
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov5642, 1);
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov9740, 2);
