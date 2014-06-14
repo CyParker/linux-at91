@@ -228,19 +228,19 @@ static struct i2c_board_info i2c_ov9740 = {
 static struct i2c_board_info i2c_ov7740 = {
 	I2C_BOARD_INFO("ov7740", 0x21),
 };
-
-static struct spi_board_info spidev_board_info[]{
+/*
+static struct spi_board_info xp_spi_devices[] = {
 	{
 		.modalias = "spidev",
 		.max_speed_hz = 500000,
 		.bus_num = 1,
 		.chips_select = 0,
-		.mode = SPI_MODE_3
+		.mode = SPI_MODE_0
 	},
 	
 };
+*/
 
-at91_add_device_spi(spidev_board_info, ARRAY_SIZE(spidev_board_info));
 
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov2640, 0);
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov5642, 1);
@@ -326,6 +326,8 @@ static int ksz9031rn_phy_fixup(struct phy_device *dev)
 static void __init sama5_dt_device_init(void)
 {
 	struct device_node *np;
+
+	//at91_add_device_spi(spidev_board_info, ARRAY_SIZE(xp_spi_board_info));
 
 	if (of_machine_is_compatible("atmel,sama5d3xcm") &&
 	    IS_ENABLED(CONFIG_PHYLIB))
