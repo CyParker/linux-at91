@@ -46,7 +46,8 @@
 			};
 
 			spi0: spi@f0004000 {
-				cs-gpios = <&pioD 13 0>, <0>, <0>, <&pioD 16 0>;
+				compatiple = "linux,spidev";
+				cs-gpios = <&pioD 13 0>, <0>, <0>, <0>;
 				status = "okay";
 			};
 
@@ -99,8 +100,18 @@
 			};
 
 			spi1: spi@f8008000 {
-				cs-gpios = <&pioC 25 0>;
+				cs-gpios = <&pioC 25 0>, <0>, <0>, <&pioD 16 0>;
 				status = "okay";
+				spidev@0 {
+					compatible = "linux,spidev";
+					reg = <0>;
+					spi-max-frequency = <1000000>;
+				};
+				spidev@1 {
+					compatible = "linux,spidev";
+					reg = <1>;
+					spi-max-frequency = <1000000>;
+				};
 			};
 
 			adc0: adc@f8018000 {
@@ -158,6 +169,11 @@
 			dbgu: serial@ffffee00 {
 				status = "okay";
 			};
+
+			watchdog@fffffe40 {
+				status = "okay";
+			};
+
 		};
 
 		nand0: nand@60000000 {

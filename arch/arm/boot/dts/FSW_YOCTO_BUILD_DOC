@@ -1,0 +1,15 @@
+Yocto Custom Build:
+	-Linux-at91: arch/arm/boot/dts/at91-sama5d3_fsw.dts used to construct the DTB
+		     arch/arm/config/sama5d3_fsw_defconfig custom defconfig file
+	-at91bootstrap: board/sama5d3_fsw these files are just a copy of the sama5d3_xplained
+			board/Config.in add sama5d3_fsw board info
+	-u-boot-at91: mostly used for saving time
+	-outputs: DTB, 
+
+
+
+DEBUG PROGRAMS:
+-GDB SERVER
+
+
+FLIGHT PROGRAMS:
