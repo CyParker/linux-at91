@@ -114,6 +114,24 @@
 				};
 			};
 
+			spi {
+				compatible = "spi-gpio";
+				#address-cells = <0x1>;
+				#size-cells = <0>;
+
+				gpio-sck = <&pioE 12 0>;
+				gpio-miso = <&pioE 14 0>;
+				gpio-mosi = <&pioE 16 0>;
+				/*cs-gpios = <&pioE 11 0>;*/
+				num-chipselects = <0>;
+
+				spidev@2 {
+					compatible = "linux,spidev";
+					reg = <0>;
+					spi-max-frequency = <1000000>;
+				};
+			};
+
 			adc0: adc@f8018000 {
 				pinctrl-names = "default";
 				pinctrl-0 = <
