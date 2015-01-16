@@ -78,13 +78,6 @@ enum {
 	PWMF_ENABLED = 1 << 1,
 	PWMF_EXPORTED = 1 << 2,
 };
-
-enum pwm_override{
-	PWM_OVERRIDE_PWML_LO,
-	PWM_OVERRIDE_PWML_HI,
-	PWM_OVERRIDE_PWMH_LO,
-	PWM_OVERRIDE_PWMH_HI,
-};
 	
 struct pwm_device {
 	const char		*label;

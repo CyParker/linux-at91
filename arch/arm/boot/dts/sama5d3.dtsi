@@ -265,7 +265,7 @@
 			spi1: spi@f8008000 {
 				#address-cells = <1>;
 				#size-cells = <0>;
-				compatible = "atmel,at91rm9200-spi,spidev";
+				compatible = "atmel,at91rm9200-spi";
 				reg = <0xf8008000 0x100>;
 				interrupts = <25 IRQ_TYPE_LEVEL_HIGH 3>;
 				dmas = <&dma1 2 AT91_DMA_CFG_PER_ID(15)>,
