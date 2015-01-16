@@ -240,12 +240,7 @@ static struct spi_board_info xp_spi_devices[] = {
 	
 };
 */
-/*
-static struct pwm_lookup board_pwm_lookup[] = {
-	PWM_LOOKUP("sama5d3-pwm", 0, "pwm0", NULL,
-		50000, PWM_POLARITY_NORMAL),
-};
-*/
+
 
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov2640, 0);
 LINK_SENSOR_MODULE_TO_SOC_CAMERA(ov5642, 1);
@@ -333,13 +328,6 @@ static void __init sama5_dt_device_init(void)
 	struct device_node *np;
 
 	//at91_add_device_spi(spidev_board_info, ARRAY_SIZE(xp_spi_board_info));
-	
-	/* Enable PWM */
-	//pwm_add_table(board_pwm_lookup, ARRAY_SIZE(board_pwm_lookup));
-
-	/* Enable SSC0 */
-	//at91_add_device_ssc(SAMA5D3_ID_SSC0,ATMEL_SSC_TX);
-
 
 	if (of_machine_is_compatible("atmel,sama5d3xcm") &&
 	    IS_ENABLED(CONFIG_PHYLIB))

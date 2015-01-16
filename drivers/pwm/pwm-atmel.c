@@ -33,11 +33,6 @@
 #define PWM_CMR_CPOL		(1 << 9)
 #define PWM_CMR_UPD_CDTY	(1 << 10)
 
-/* The following registers are PWM Override related registers */
-#define PWM_OOV			0x44
-#define PWM_OSSUPD		0x54
-#define PWM_OSCUPD		0x58
-
 /* The following registers for PWM v1 */
 #define PWMV1_CDTY		0x04
 #define PWMV1_CPRD		0x08
@@ -144,13 +139,6 @@ static int atmel_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
 		return ret;
 	}
 
-	/* Determine Output Override Settings */
-	//Write override value
-	atmel_pwm_writel(atmel_pwm, PWM_OOV,0x00000000);
-	//Write update bits for output override
-	atmel_pwm_writel(atmel_pwm, PWM_OSSUPD, 0x0000000F);
-	
-	/* Legit atmel code */
 	atmel_pwm_ch_writel(atmel_pwm, pwm->hwpwm, PWM_CMR, pres);
 	atmel_pwm->config(chip, pwm, dty, prd);
 
