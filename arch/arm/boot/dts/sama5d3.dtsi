@@ -582,8 +582,8 @@
 							 AT91_PIOA 19 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA19 periph C ISI_D3, conflicts with LCDDAT19, TWCK2 */
 							 AT91_PIOA 20 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA20 periph C ISI_D4, conflicts with LCDDAT20, PWMH0 */
 							 AT91_PIOA 21 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA21 periph C ISI_D5, conflicts with LCDDAT21, PWML0 */
-							 AT91_PIOA 22 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA22 periph C ISI_D6, conflicts with LCDDAT22, PWMH1 */
-							 AT91_PIOA 23 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA23 periph C ISI_D7, conflicts with LCDDAT23, PWML1 */
+							 /*AT91_PIOA 22 AT91_PERIPH_C AT91_PINCTRL_NONE*/	/* PA22 periph C ISI_D6, conflicts with LCDDAT22, PWMH1 */
+							/* AT91_PIOA 23 AT91_PERIPH_C AT91_PINCTRL_NONE */	/* PA23 periph C ISI_D7, conflicts with LCDDAT23, PWML1 */
 							 AT91_PIOC 30 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PC30 periph C ISI_PCK, conflicts with UTXD0 */
 							 AT91_PIOA 31 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA31 periph C ISI_HSYNC, conflicts with TWCK0, UTXD1 */
 							 AT91_PIOA 30 AT91_PERIPH_C AT91_PINCTRL_NONE	/* PA30 periph C ISI_VSYNC, conflicts with TWD0, URXD1 */
@@ -639,8 +639,8 @@
 							 AT91_PIOB 1 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB1 periph A GTX1, conflicts with PWML0 */
 							 AT91_PIOB 2 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB2 periph A GTX2, conflicts with TK1 */
 							 AT91_PIOB 3 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB3 periph A GTX3, conflicts with TF1 */
-							 AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB4 periph A GRX0, conflicts with PWMH1 */
-							 AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB5 periph A GRX1, conflicts with PWML1 */
+							 /*AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE */	/* PB4 periph A GRX0, conflicts with PWMH1 */
+							/* AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_NONE	*/	/* PB5 periph A GRX1, conflicts with PWML1 */
 							 AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PB6 periph A GRX2, conflicts with TD1 */
 							 AT91_PIOB 7 AT91_PERIPH_A AT91_PINCTRL_NONE>;	/* PB7 periph A GRX3, conflicts with RK1 */
 					};

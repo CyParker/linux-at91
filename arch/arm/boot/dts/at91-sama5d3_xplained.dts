@@ -70,7 +70,7 @@
 
 			pwm0: pwm@f002c000 {
 				pinctrl-names = "default";
-				pinctrl-0 = <&pinctrl_pwm0_pwml0>;
+				pinctrl-0 = <&pinctrl_pwm0>;
 				status = "okay";
 			};
 
@@ -113,16 +113,17 @@
 					spi-max-frequency = <1000000>;
 				};
 			};
-
+			/*
 			spi {
 				compatible = "spi-gpio";
 				#address-cells = <0x1>;
 				#size-cells = <0>;
+				status = "okay";
 
 				gpio-sck = <&pioE 12 0>;
 				gpio-miso = <&pioE 14 0>;
 				gpio-mosi = <&pioE 16 0>;
-				/*cs-gpios = <&pioE 11 0>;*/
+				cs-gpios = <&pioE 11 0>;
 				num-chipselects = <0>;
 
 				spidev@2 {
@@ -131,6 +132,7 @@
 					spi-max-frequency = <1000000>;
 				};
 			};
+			*/
 
 			adc0: adc@f8018000 {
 				pinctrl-names = "default";
@@ -171,10 +173,17 @@
 						atmel,pins =
 							<AT91_PIOE 1 AT91_PERIPH_GPIO AT91_PINCTRL_PULL_UP_DEGLITCH>;
 					};
-
+					/* Default entry
 					pinctrl_pwm0_pwml0: pwm0_pwml0 {
 						atmel,pins =
 							<AT91_PIOA 21 AT91_PERIPH_B AT91_PINCTRL_NONE>;
+					};
+					*/
+					/* PWM entry for Dev board */
+					pinctrl_pwm0: pwm0-0 {
+						atmel,pins =
+							<AT91_PIOA 23 AT91_PERIPH_B AT91_PINCTRL_NONE
+							 AT91_PIOA 22 AT91_PERIPH_B AT91_PINCTRL_NONE>;
 					};
 
 					pinctrl_usba_vbus: usba_vbus {
